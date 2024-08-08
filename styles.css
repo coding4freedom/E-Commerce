@@ -13,6 +13,10 @@ body {
     overflow-x: hidden;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 a {
     text-decoration: none;   
 }
@@ -56,6 +60,10 @@ button:active {
     margin: 0 auto;
 }
 
+.no-cursor {
+    cursor: not-allowed;
+}
+
 /* 
 
     NavBar 
@@ -79,7 +87,8 @@ button:active {
     width: 160px;
 }
 
-.nav__link {
+.nav__link,
+.footer__link {
     margin-left: 16px;
     font-size: 20px;
     color: #4267b2;
@@ -87,7 +96,8 @@ button:active {
     padding: 8px;
 }
 
-.nav__link:hover {
+.nav__link:hover, 
+.footer__link a:hover {
     text-decoration: underline;
 }
 
@@ -256,8 +266,118 @@ h2 {
 
 .book__img {
     max-height: 380px;
+    transition: all 300ms ease;
+    cursor: no-drop;
 }
 
 .book__img--wrapper {
     margin-bottom: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    display: flex;
+}
+
+.book:hover .book__img {
+    transform: scale(1.03);
+}
+
+.book__title {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+.book__title:hover {
+    text-decoration: underline;
+    cursor: no-drop;
+}
+
+.book__ratings {
+    margin-bottom: 8px;
+    color: #4267b2;
+}
+
+.book__price--normal {
+    text-decoration: line-through;
+    padding-right: 6px;
+    color: #696767;
+}
+
+/*
+
+Latest Section
+
+*/
+
+#recent {
+    padding: 4px 8vw;
+}
+
+.books__recent {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/*
+
+Explore Section
+
+*/
+
+#explore {
+    background-color: rgba(137, 143, 156, .3);
+}
+
+.explore__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 28px 0;
+}
+
+.explore__title{
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+.explore__btn {
+    font-size: 16px;
+}
+
+/*  
+
+Footer Section
+
+*/
+
+footer {
+    background-color: #242424;
+}
+
+.footer__container {
+    padding: 30px;
+}
+
+.footer__row {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.footer__logo{
+    width: 120px;
+    filter: grayscale(1) invert(1);
+}
+
+.footer__links{
+    display: flex;
+    gap: 16px;
+    justify-content: space-between;
+    margin: 16px 0;
+}
+
+.footer__link a, 
+.footer__para {
+    color: #fff;
 }
