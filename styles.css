@@ -326,6 +326,7 @@ h2 {
 
 .books {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .book {
@@ -501,6 +502,14 @@ select {
     padding-top: 60px;
     font-size: 60px;
     color: #7342d6;
+}
+
+.books__loading--spinner {
+    display: none;
+}
+
+.books__loading .books__loading--spinner {
+    display: block;
 }
   
 .fa-spinner {
